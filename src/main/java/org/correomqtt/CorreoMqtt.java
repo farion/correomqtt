@@ -63,14 +63,13 @@ public class CorreoMqtt extends Application {
         EventBus.register(this);
 
         if (LOGGER.isInfoEnabled()) {
-            LOGGER.info("Application started.");
+            LOGGER.info("CorreoMQTT version is {}", VersionUtils.getVersion());
             LOGGER.info("JVM: {} {} {}", System.getProperty("java.vendor"), System.getProperty("java.runtime.name"), System.getProperty("java.runtime.version"));
             LOGGER.info("JavaFX: {}, Runtime: {}", System.getProperty("javafx.version"), System.getProperty("javafx.runtime.version"));
             LOGGER.info("OS: {} {} {}", System.getProperty("os.name"), System.getProperty("os.version"), System.getProperty("os.arch"));
             Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
             String xdgCurrentDesktop = System.getenv("XDG_CURRENT_DESKTOP");
             LOGGER.info("ENV: {}{} x {} ", xdgCurrentDesktop != null ? xdgCurrentDesktop + " " : "", screenSize.getWidth(), screenSize.getHeight());
-            LOGGER.info("CorreoMQTT version is {}", VersionUtils.getVersion());
         }
 
         final SettingsDTO settings = SettingsProvider.getInstance().getSettings();
